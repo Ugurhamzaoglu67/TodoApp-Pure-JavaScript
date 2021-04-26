@@ -1,0 +1,14 @@
+
+body {
+      background-color:rgb(229, 247, 247);
+}
+
+
+.container {
+      max-width: 600px;
+      
+}
+
+i:hover {
+      cursor: pointer
+}
