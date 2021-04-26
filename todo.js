@@ -2,6 +2,39 @@
 const form = document.querySelector('.formAdd')
 const myul= document.querySelector('.myul')
 const plus = document.querySelector('#plus')
+const searchInput = document.querySelector('.search')
+
+
+searchInput.addEventListener('keyup',(e)=> {
+    
+      const my_val = e.target.value.trim().toLowerCase()
+
+      myFilter(my_val)
+     
+})
+
+
+const myFilter = (my_val) => {
+        
+      //Eşleşenleri getir sadece , Burda Eşleşmeyenlere display:none yaptık
+      Array.from(myul.children).filter((item) => {
+            
+            return !item.textContent.toLowerCase().includes(my_val)
+
+      }).forEach((item) => {
+            item.classList.add('filtered')
+      })
+
+      //Silinince liste tekrar ortaya çıksın
+      Array.from(myul.children).filter((item) => {
+            
+            return item.textContent.toLowerCase().includes(my_val)
+
+      }).forEach((item) => {
+            item.classList.remove('filtered')
+      })
+}
+
 
 
 //_________________________________ add new li _____________________________________
